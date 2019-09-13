@@ -28,7 +28,8 @@ function TokenListPage() {
                 </Menu>
 
             </Sider>
-            <Content width={'75%'} > Content
+            <Content width={'75%'} >
+                <h1 className='contentTitle'>Token List</h1>
             </Content>
         </Layout>
     )

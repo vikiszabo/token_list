@@ -8,11 +8,15 @@
 
 .ant-menu {
     background: #343654;
-    color: #686A80;
+    color: white;
 }
 
 .logo {
     margin: 16px;
     display: flex;
     justify-content: center;
+}
+.contentTitle {
+    margin: 36px;
+    color: white;
 }
