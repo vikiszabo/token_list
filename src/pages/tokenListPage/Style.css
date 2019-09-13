@@ -1,0 +1,18 @@
+.ant-layout-content {
+    background: #090925;
+}
+
+.ant-layout-sider {
+    background: #343654;
+}
+
+.ant-menu {
+    background: #343654;
+    color: #686A80;
+}
+
+.logo {
+    margin: 16px;
+    display: flex;
+    justify-content: center;
+}
