@@ -20,3 +20,14 @@
     margin: 36px;
     color: white;
 }
+
+.searchBox {
+    margin: 36px;
+    width: 400px;
+}
+
+.ant-input {
+    background:  #343654;
+    border: none;
+    color: white;
+}

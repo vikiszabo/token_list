@@ -1,13 +1,14 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import './Style.css';
-import {Icon, Layout, Menu} from 'antd';
+import {Icon, Layout, Menu, Input} from 'antd';
 import LOGO from '../../logo.svg';
 
 
 function TokenListPage() {
 
     const {Sider, Content} = Layout;
+
 
     return (
         <Layout style={{height: 1200, width: 1600}}>
@@ -30,6 +31,12 @@ function TokenListPage() {
             </Sider>
             <Content width={'75%'} >
                 <h1 className='contentTitle'>Token List</h1>
+
+                <Input
+                    className="searchBox"
+                    placeholder="Contract name or address or ticker"
+                    prefix={<Icon type="search" style={{ color: 'white' }} />}
+                />
             </Content>
         </Layout>
     )
