@@ -6,16 +6,6 @@
     background: #343654;
 }
 
-.ant-menu {
-    background: #343654;
-    color: white;
-}
-
-.logo {
-    margin: 16px;
-    display: flex;
-    justify-content: center;
-}
 .contentTitle {
     margin: 36px;
     color: white;
@@ -65,5 +55,14 @@
 }
 .exportToCsv-button:focus {
     background:  #343654;
+    color: white;
+}
+
+.ant-table-wrapper {
+    margin: 36px;
+
+}
+
+.ant-table {
     color: white;
 }

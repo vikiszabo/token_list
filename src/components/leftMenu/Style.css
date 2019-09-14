@@ -1,0 +1,10 @@
+.ant-menu {
+    background: #343654;
+    color: white;
+}
+
+.logo {
+    margin: 16px;
+    display: flex;
+    justify-content: center;
+}
