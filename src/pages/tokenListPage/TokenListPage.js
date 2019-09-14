@@ -29,12 +29,16 @@ function TokenListPage() {
                     <Button className="issueToken-button" size={"default"}>
                         Issue Token
                     </Button>
-                    <Button className="exportToCsv-button"  icon="download" size={"default"}>
+                    <Button className="exportToCsv-button"  icon="download" >
                         Export to CSV
                     </Button>
                 </div>
                 </div>
-                <Table columns={columns} dataSource={dataSource}/>
+                <Table rowClassName="rows"
+                       bordered={false}
+                       columns={columns}
+                       dataSource={dataSource}
+                       size="medium"/>
 
             </Content>
         </Layout>

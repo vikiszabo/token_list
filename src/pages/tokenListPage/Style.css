@@ -4,6 +4,18 @@
 
 .ant-layout-sider {
     background: #343654;
+    color: white;
+}
+
+.ant-menu {
+    background: #343654;
+    color: white;
+}
+
+.logo {
+    margin: 16px;
+    display: flex;
+    justify-content: center;
 }
 
 .contentTitle {
@@ -60,9 +72,17 @@
 
 .ant-table-wrapper {
     margin: 36px;
-
 }
 
-.ant-table {
+.ant-table  {
     color: white;
+
+}
+.ant-table-header-column {
+    color: white;
+
+}
+.rows {
+    background: #090925;
+    border: none;
 }
