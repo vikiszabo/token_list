@@ -1,7 +1,7 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import './Style.css';
-import {Icon, Layout, Menu, Input} from 'antd';
+import {Icon, Layout, Menu, Input, Button} from 'antd';
 import LOGO from '../../logo.svg';
 
 
@@ -31,12 +31,21 @@ function TokenListPage() {
             </Sider>
             <Content width={'75%'} >
                 <h1 className='contentTitle'>Token List</h1>
-
+                <div className={"searchActions-div"}>
                 <Input
                     className="searchBox"
                     placeholder="Contract name or address or ticker"
                     prefix={<Icon type="search" style={{ color: 'white' }} />}
                 />
+                <div>
+                    <Button className="issueToken-button" size={"default"}>
+                        Issue Token
+                    </Button>
+                    <Button className="exportToCsv-button"  icon="download" size={"default"}>
+                        Export to CSV
+                    </Button>
+                </div>
+                </div>
             </Content>
         </Layout>
     )

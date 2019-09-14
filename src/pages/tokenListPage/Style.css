@@ -23,11 +23,47 @@
 
 .searchBox {
     margin: 36px;
-    width: 400px;
+    width: 800px;
 }
 
 .ant-input {
     background:  #343654;
     border: none;
+    color: white;
+}
+
+.searchActions-div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.issueToken-button {
+    background: #56E8CD;
+    margin-right: 16px;
+    border: none;
+    color: white;
+}
+.issueToken-button:hover {
+    background: #56E8CD;
+    color: white;
+}
+.issueToken-button:focus {
+    background: #56E8CD;
+    color: white;
+}
+
+.exportToCsv-button {
+    background:  #343654;
+    margin-right: 16px;
+    border: none;
+    color: white;
+}
+.exportToCsv-button:hover {
+    background:  #343654;
+    color: white;
+}
+.exportToCsv-button:focus {
+    background:  #343654;
     color: white;
 }
