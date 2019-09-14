@@ -1,34 +1,45 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import './Style.css';
-import { Layout, Menu, Icon } from 'antd';
-import LOGO from '../../logo.svg';
+import {Button, Icon, Input, Layout, Table} from 'antd';
+import LeftMenu from "../../components/leftMenu/LeftMenu";
+import {columns, dataSource} from "../../data/data";
 
 
 function TokenListPage() {
 
     const {Sider, Content} = Layout;
 
+
     return (
-        <Layout>
-            <Sider width={'25%'}>
-                <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-                    <Menu.Item key="1">
-                        <img alt={''} src={LOGO} width={50} height={50}/>
-
-                    </Menu.Item>
-                    <Menu.Item key="2">
-                        <Icon type="plus" />
-                        <span>Issue Token</span>
-                    </Menu.Item>
-                    <Menu.Item key="3">
-                        <Icon type="unordered-list" />
-                        <span>Token List</span>
-                    </Menu.Item>
-                </Menu>
-
+        <Layout style={{height: 1200, width: 1600}}>
+            <Sider type={'flex'} justify={'center'} width={'25%'} >
+                <LeftMenu/>
             </Sider>
-            <Content width={'75%'}> Content
+            <Content width={'75%'} >
+
+                <h1 className='contentTitle'>Token List</h1>
+                <div className={"searchActions-div"}>
+                <Input
+                    className="searchBox"
+                    placeholder="Contract name or address or ticker"
+                    prefix={<Icon type="search" style={{ color: 'white' }} />}
+                />
+                <div>
+                    <Button className="issueToken-button" size={"default"}>
+                        Issue Token
+                    </Button>
+                    <Button className="exportToCsv-button"  icon="download" >
+                        Export to CSV
+                    </Button>
+                </div>
+                </div>
+                <Table rowClassName="rows"
+                       bordered={false}
+                       columns={columns}
+                       dataSource={dataSource}
+                       size="medium"/>
+
             </Content>
         </Layout>
     )
