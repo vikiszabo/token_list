@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import 'antd/dist/antd.css';
 import './Style.css';
 
@@ -11,4 +11,4 @@ function IssueTokenPage() {
 
 }
 
-export default IssueTokenPage;
+export default memo(IssueTokenPage);

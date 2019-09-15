@@ -1,5 +1,4 @@
-import React from 'react';
-import './App.css';
+import React, {memo} from 'react';
 import TokenListPage from "./pages/tokenListPage/TokenListPage";
 import TokenHomePage from "./pages/tokenHomePage/TokenHomePage";
 import IssueTokenPage from "./pages/issueTokenPage/IssueTokenPage";
@@ -18,4 +17,4 @@ function App() {
   );
 }
 
-export default App;
+export default memo(App);

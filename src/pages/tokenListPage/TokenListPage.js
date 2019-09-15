@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import 'antd/dist/antd.css';
 import './Style.css';
 import {Button, Col, Icon, Input, Row, Table} from 'antd';
@@ -7,6 +7,8 @@ import {Link} from "react-router-dom";
 
 
 function TokenListPage() {
+
+    const { Column } = Table;
 
     return (
 
@@ -35,13 +37,29 @@ function TokenListPage() {
                 </Row>
                 <Table rowClassName="rows"
                        bordered={false}
-                       columns={columns}
                        dataSource={dataSource}
-                       size="medium"/>
+                       size="medium">
+
+                    {
+                        columns.map((column, index) =>
+                        <Column title={column.title} dataIndex={column.dataIndex} key={column.key} />
+                        )
+                    }
+
+                    <Column title='Action'
+                            dataIndex='delete'
+                            key='delete'
+                            render={() => <Icon type="delete"
+                                                style={{color: '#56E8CD', fontSize: '1rem'}}/>}
+                                fixed= 'right'
+                                align= 'center'
+                            />
+
+                </Table>
             </Col>
         </Row>
     )
 
 }
 
-export default TokenListPage;
+export default memo(TokenListPage);

@@ -1,6 +1,6 @@
 import LOGO from "../../logo.svg";
 import {Menu, Icon} from "antd";
-import React from "react";
+import React, {memo} from "react";
 import "./Style.css";
 import { Link } from "react-router-dom";
 
@@ -32,4 +32,4 @@ function LeftMenu(
     )
 }
 
-export default LeftMenu;
+export default memo(LeftMenu);

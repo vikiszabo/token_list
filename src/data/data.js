@@ -8,8 +8,18 @@ export const dataSource = [
         tokenName: 'TTism',
         ticker: 'TTT',
         supply: 100000,
-        date: '17 Max 2019',
+        date: '17 May 2019',
         issuerName: 'xxxx SA',
+        template: 'ERC20',
+        fixed: 'left'
+    },
+    {
+        key: '2',
+        tokenName: 'Vvism',
+        ticker: 'VVV',
+        supply: 200000,
+        date: '17 May 2018',
+        issuerName: 'vvvv SA',
         template: 'ERC20',
         fixed: 'left'
     },
@@ -51,13 +61,5 @@ export const columns = [
         dataIndex: 'template',
         key: 'template',
         fixed: 'left',
-    },
-    {
-        title: 'Action',
-        dataIndex: '',
-        key: 'x',
-        render: () => <Icon type="delete" style={{ color: '#56E8CD', fontSize: '16px' }} />,
-        fixed: 'right',
-        align: 'center'
-    },
+    }
 ];
