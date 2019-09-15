@@ -1,31 +1,13 @@
-.ant-layout-content {
-    background: #090925;
-}
-
-.ant-layout-sider {
-    background: #343654;
-    color: white;
-}
-
-.ant-menu {
-    background: #343654;
-    color: white;
-}
-
-.logo {
-    margin: 16px;
-    display: flex;
-    justify-content: center;
-}
 
 .contentTitle {
-    margin: 36px;
+    margin: 2rem;
     color: white;
 }
 
 .searchBox {
-    margin: 36px;
-    width: 800px;
+    margin: 0 2rem 0 2rem;
+    max-width: 40rem;
+    width: 90%;
 }
 
 .ant-input {
@@ -34,17 +16,11 @@
     color: white;
 }
 
-.searchActions-div {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
 .issueToken-button {
     background: #56E8CD;
-    margin-right: 16px;
     border: none;
     color: white;
+    margin: 0 1rem 1rem 1rem;
 }
 .issueToken-button:hover {
     background: #56E8CD;
@@ -57,7 +33,6 @@
 
 .exportToCsv-button {
     background:  #343654;
-    margin-right: 16px;
     border: none;
     color: white;
 }
@@ -71,7 +46,7 @@
 }
 
 .ant-table-wrapper {
-    margin: 36px;
+    margin: 2rem;
 }
 
 .ant-table  {

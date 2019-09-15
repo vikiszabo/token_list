@@ -52,12 +52,12 @@ export const columns = [
         key: 'template',
         fixed: 'left',
     },
-   {
+    {
         title: 'Action',
         dataIndex: '',
         key: 'x',
         render: () => <Icon type="delete" style={{ color: '#56E8CD', fontSize: '16px' }} />,
-       fixed: 'right',
-       align: 'center'
+        fixed: 'right',
+        align: 'center'
     },
 ];

@@ -1,0 +1,14 @@
+.homeLayout {
+    max-width: 1600px;
+    max-height: 1200px;
+    height: 100%;
+}
+
+.leftMenu-col {
+    background: #343654;
+    color: white;
+}
+
+.page-col {
+    background: #090925;
+}
