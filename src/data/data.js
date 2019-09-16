@@ -1,5 +1,3 @@
-import React from 'react';
-import {Icon} from 'antd';
 
 
 export const dataSource = [
@@ -29,37 +27,31 @@ export const columns = [
     {
         title: 'Token name',
         dataIndex: 'tokenName',
-        key: 'tokenName',
         fixed: 'left'
     },
     {
         title: 'Token ticker',
         dataIndex: 'ticker',
-        key: 'ticker',
         fixed: 'left'
     },
     {
         title: 'Total supply',
         dataIndex: 'supply',
-        key: 'supply',
         fixed: 'left'
     },
     {
         title: 'Creation date',
         dataIndex: 'date',
-        key: 'date',
         fixed: 'left'
     },
     {
         title: 'Issuer name',
         dataIndex: 'issuerName',
-        key: 'issuerName',
         fixed: 'left'
     },
     {
         title: 'Template',
         dataIndex: 'template',
-        key: 'template',
         fixed: 'left',
     }
 ];

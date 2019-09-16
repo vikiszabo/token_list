@@ -1,14 +1,24 @@
 import React, {memo} from 'react';
 import 'antd/dist/antd.css';
 import './Style.css';
-import {Button, Col, Icon, Input, Row, Table} from 'antd';
-import {columns, dataSource} from "../../data/data";
+import {Button, Col, Form, Icon, Input, Row, Table} from 'antd';
+import {columns} from "../../data/data";
 import {Link} from "react-router-dom";
+import {uniqueID} from "../../utils/helperFunctions";
 
-
-function TokenListPage() {
-
+function TokenListPage(
+    {
+        tokens,
+        deleteToken
+    }
+)
+{
     const { Column } = Table;
+
+    const onDelete = (key, e) => {
+        e.preventDefault();
+        deleteToken(key);
+    };
 
     return (
 
@@ -17,16 +27,20 @@ function TokenListPage() {
                 <h1 className='contentTitle'>Token List</h1>
                 <Row type="flex" justify="center">
                     <Col span={16} >
-                        <Input
-                            className="searchBox"
-                            placeholder="Contract name or address or ticker"
-                            prefix={<Icon type="search" style={{ color: 'white' }} />}
-                        />
+                        <Form >
+                            <Form.Item >
+                                <Input
+                                    className="searchBox"
+                                    placeholder="Contract name or address or ticker"
+                                    prefix={<Icon type="search" style={{ color: 'white' }} />}
+                                />
+                            </Form.Item>
+                        </Form>
                     </Col>
                     <Col span={8}>
                         <Button className="issueToken-button" >
                             <Link to="/tokens/issue-token">
-                            Issue Token
+                                Issue Token
                             </Link>
                         </Button>
 
@@ -37,24 +51,26 @@ function TokenListPage() {
                 </Row>
                 <Table rowClassName="rows"
                        bordered={false}
-                       dataSource={dataSource}
-                       size="medium">
-
+                       dataSource={tokens}
+                       size="medium"
+                       rowKey={token => token.key}
+                >
                     {
-                        columns.map((column, index) =>
-                        <Column title={column.title} dataIndex={column.dataIndex} key={column.key} />
+                        columns.map((token) =>
+                            <Column key={uniqueID()} title={token.title} dataIndex={token.dataIndex}  />
                         )
                     }
-
-                    <Column title='Action'
+                    <Column title='Delete'
                             dataIndex='delete'
-                            key='delete'
-                            render={() => <Icon type="delete"
-                                                style={{color: '#56E8CD', fontSize: '1rem'}}/>}
-                                fixed= 'right'
-                                align= 'center'
-                            />
-
+                            render={(record) => (
+                                <Icon type="delete"
+                                      style={{color: '#56E8CD', fontSize: '1rem'}}
+                                      onClick={(e) => {onDelete(record.key, e)}}
+                                />
+                            )}
+                            fixed= 'right'
+                            align= 'center'
+                    />
                 </Table>
             </Col>
         </Row>

@@ -3,6 +3,7 @@ import {Menu, Icon} from "antd";
 import React, {memo} from "react";
 import "./Style.css";
 import { Link } from "react-router-dom";
+import {uniqueID} from "../../utils/helperFunctions";
 
 function LeftMenu(
     {
@@ -19,7 +20,7 @@ function LeftMenu(
             <Menu  mode={'inline'} defaultSelectedKeys={['2']} selectedKeys={[selectedMenu]}>
                 {
                     menuRouting.map((route) =>
-                        <Menu.Item key={route.key}>
+                        <Menu.Item key={uniqueID()}>
                             <Link to={route.path}>
                                 <Icon type={route.icon} className="menuItems"/>
                                 <span className={ "menuItems" }>{route.label}</span>
