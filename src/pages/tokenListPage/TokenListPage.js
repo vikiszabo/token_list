@@ -1,12 +1,10 @@
 import React, {memo} from 'react';
 import 'antd/dist/antd.css';
 import './Style.css';
-import {Button, Col, Form, Icon, Input, Row, Table} from 'antd';
+import {Button, Col, Row} from 'antd';
 import {Link} from "react-router-dom";
 import TokenTable from "../../components/TokenTable/TokenTable";
 import SearchInput from "../../components/SearchInput/SearchInput";
-import {dataSource} from "../../data/data";
-import {useStateWithLocalStorage} from "../../utils/customHooks";
 
 function TokenListPage(
     {

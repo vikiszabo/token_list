@@ -1,6 +1,4 @@
-
-import {uniqueID} from "../../utils/helperFunctions";
-import {Button, Icon, Table} from "antd";
+import {Icon, Table} from "antd";
 import React, {memo} from "react";
 import './Style.css';
 
