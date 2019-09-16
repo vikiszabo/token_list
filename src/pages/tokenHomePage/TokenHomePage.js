@@ -26,33 +26,32 @@ function TokenHomePage() {
         }
     ];
 
-
     localStorage.setItem('tokens', JSON.stringify(dataSource));
     const [tokens, setTokens] = useStateWithLocalStorage('tokens');
 
     const deleteToken = (key) => {
-        const newTokens = localStorage.getItem(tokens).filter(token => token.key === key );
+        const newTokens = localStorage.getItem(tokens).filter(token => token.key !== key );
         setTokens(newTokens);
     };
 
 
 
     return (
-       <Row type="flex" justify="space-around">
-           <Col span={6} className="leftMenu-col">
-               <LeftMenu menuRouting={menuRouting}/>
-           </Col>
-           <Col span={18} className="page-col">
-               <Switch>
-                   <Route exact path="/" render={() =>
-                       <TokenListPage  tokens={tokens} deleteToken={deleteToken} />}/>
-                   <Route exact path="/tokens" render={() =>
-                       <TokenListPage tokens={tokens} deleteToken={deleteToken}  />}/>
-                   <Route  path="/tokens/issue-token" render={() => <IssueTokenPage />} />
-               </Switch>
+        <Row type="flex" justify="space-around">
+            <Col span={6} className="leftMenu-col">
+                <LeftMenu menuRouting={menuRouting}/>
+            </Col>
+            <Col span={18} className="page-col">
+                <Switch>
+                    <Route exact path="/" render={() =>
+                        <TokenListPage  tokens={tokens} deleteToken={deleteToken} />}/>
+                    <Route exact path="/tokens" render={() =>
+                        <TokenListPage tokens={tokens} deleteToken={deleteToken}  />}/>
+                    <Route  path="/tokens/issue-token" render={() => <IssueTokenPage />} />
+                </Switch>
 
-           </Col>
-       </Row>
+            </Col>
+        </Row>
     )
 
 }

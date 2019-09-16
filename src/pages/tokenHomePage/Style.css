@@ -12,3 +12,8 @@
 .page-col {
     background: #090925;
 }
+
+.contentTitle {
+    margin: 2rem;
+    color: white;
+}

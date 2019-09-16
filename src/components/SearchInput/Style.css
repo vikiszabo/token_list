@@ -1,0 +1,13 @@
+
+
+.searchBox {
+    margin: 0 2rem 0 2rem;
+    max-width: 40rem;
+    width: 90%;
+}
+
+.ant-input {
+    background:  #343654;
+    border: none;
+    color: white;
+}

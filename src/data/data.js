@@ -23,35 +23,5 @@ export const dataSource = [
     },
 ];
 
-export const columns = [
-    {
-        title: 'Token name',
-        dataIndex: 'tokenName',
-        fixed: 'left'
-    },
-    {
-        title: 'Token ticker',
-        dataIndex: 'ticker',
-        fixed: 'left'
-    },
-    {
-        title: 'Total supply',
-        dataIndex: 'supply',
-        fixed: 'left'
-    },
-    {
-        title: 'Creation date',
-        dataIndex: 'date',
-        fixed: 'left'
-    },
-    {
-        title: 'Issuer name',
-        dataIndex: 'issuerName',
-        fixed: 'left'
-    },
-    {
-        title: 'Template',
-        dataIndex: 'template',
-        fixed: 'left',
-    }
-];
+
+

@@ -8,7 +8,12 @@ export const useStateWithLocalStorage = localStorageKey => {
     );
 
     useEffect(() => {
-        localStorage.setItem(localStorageKey, JSON.stringify(tokens));
-    }, [tokens, localStorageKey]);
+        if (localStorage.getItem(localStorageKey)) {
+            localStorage.setItem(localStorageKey, JSON.stringify(tokens));
+        } else {
+            console.log("The data is missing.");
+        }
+
+    }, [tokens]);
     return [tokens, setTokens];
 };

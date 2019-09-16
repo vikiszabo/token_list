@@ -1,0 +1,18 @@
+.ant-table-wrapper {
+    margin: 2rem;
+}
+
+.ant-table  {
+    color: white;
+
+}
+.ant-table-header-column {
+    color: white;
+
+}
+.rows {
+    background: #090925;
+    border: none;
+}
+
+.ant-table-thead > tr > th { background-color: #090925; }
