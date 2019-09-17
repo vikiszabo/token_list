@@ -1,5 +1,7 @@
-
-
+/**
+ * Helper file to create base data for the table
+ * @type {*[]}
+ */
 export const dataSource = [
     {
         key: '1',
@@ -9,7 +11,6 @@ export const dataSource = [
         date: '17 May 2019',
         issuerName: 'xxxx SA',
         template: 'ERC20',
-        fixed: 'left'
     },
     {
         key: '2',
@@ -19,7 +20,6 @@ export const dataSource = [
         date: '17 May 2018',
         issuerName: 'vvvv SA',
         template: 'ERC20',
-        fixed: 'left'
     },
 ];
 

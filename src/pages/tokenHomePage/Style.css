@@ -17,3 +17,32 @@
     margin: 2rem;
     color: white;
 }
+
+.issueToken-button {
+    background: #56E8CD;
+    border: none;
+    color: white;
+    margin: 0 1rem 1rem 1rem;
+}
+.issueToken-button:hover {
+    background: #56E8CD;
+    color: white;
+}
+.issueToken-button:focus {
+    background: #56E8CD;
+    color: white;
+}
+
+.action-buttons {
+    background:  #343654;
+    border: none;
+    color: white;
+}
+.action-buttons:hover {
+    background:  #343654;
+    color: white;
+}
+.action-buttons:focus {
+    background:  #343654;
+    color: white;
+}

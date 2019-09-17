@@ -1,5 +1,13 @@
 import {useEffect, useState} from "react";
 
+//This file customHooks that can be used through the project
+
+
+/**
+ *
+ * @param localStorageKey
+ * @returns {*[]}
+ */
 
 export const useStateWithLocalStorage = localStorageKey => {
 

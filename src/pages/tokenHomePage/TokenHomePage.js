@@ -10,6 +10,10 @@ import {dataSource} from "../../data/data";
 import {useStateWithLocalStorage} from "../../utils/customHooks";
 
 
+/**
+ * The main page of the app
+ */
+
 function TokenHomePage() {
     const menuRouting = [
         {
@@ -25,6 +29,12 @@ function TokenHomePage() {
             key:  '2'
         }
     ];
+
+
+    /**
+     *  Handling states and tracking local storage logic needs to be implemented yet
+     *  with React Hooks apis.
+     */
 
     localStorage.setItem('tokens', JSON.stringify(dataSource));
     const [tokens, setTokens] = useStateWithLocalStorage('tokens');

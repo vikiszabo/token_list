@@ -2,21 +2,13 @@ import {Icon, Table} from "antd";
 import React, {memo} from "react";
 import './Style.css';
 
-function TokenTable(
-    {
-        deleteToken,
-        tokens
-    }
-)
+/**
+ * Table component to display the token list.
+ * @param tokens
+ */
+function TokenTable({tokens})
 {
-
     const { Column } = Table;
-
-    const onDelete = (e, key) => {
-        e.preventDefault();
-        deleteToken(key);
-    };
-
 
     const columns = [
         {
@@ -55,31 +47,32 @@ function TokenTable(
             align: 'center',
             fixed: 'right',
             render: () => (
-                <Icon type="delete" style={{color: '#56E8CD', fontSize: '1rem'}}
-                      />
+                <Icon type="delete"
+                      style={{color: '#56E8CD', fontSize: '1rem'}}/>
 
             )
         }
     ];
 
     return (
-        <Table rowClassName="rows"
-               size="medium"
-               dataSource={tokens}
-               rowKey={token => token.key}
-        >
-            {
-                columns.map((column) =>
-                    <Column key={column.dataIndex}
-                            title={column.title}
-                            dataIndex={column.dataIndex}
-                            render={column.render}
-                            align={column.align}
-
-                    />
-                )
-            }
-        </Table>
+        <>
+            <Table rowClassName="rows"
+                   size="medium"
+                   dataSource={tokens}
+                   rowKey={tokens.map(token => token.key)}
+            >
+                {
+                    columns.map((column) =>
+                        <Column key={column.dataIndex}
+                                title={column.title}
+                                dataIndex={column.dataIndex}
+                                render={column.render}
+                                align={column.align}
+                        />
+                    )
+                }
+            </Table>
+        </>
     )
 }
 

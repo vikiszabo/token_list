@@ -3,13 +3,19 @@ import 'antd/dist/antd.css';
 import './Style.css';
 import {Button, Col, Row} from 'antd';
 import {Link} from "react-router-dom";
-import TokenTable from "../../components/TokenTable/TokenTable";
+import TokenTable from "../../components/tokenTable/TokenTable";
 import SearchInput from "../../components/SearchInput/SearchInput";
+
+
+/**
+ * This is the page where you can see and search tokens.
+ * @param tokens
+ */
+
 
 function TokenListPage(
     {
-        tokens,
-        deleteToken
+        tokens
     })
 {
 
@@ -29,12 +35,12 @@ function TokenListPage(
                             </Link>
                         </Button>
 
-                        <Button className="exportToCsv-button"  icon="download" >
+                        <Button className="action-buttons" icon="download" >
                             Export to CSV
                         </Button>
                     </Col>
                 </Row>
-                <TokenTable tokens={tokens} deleteToken={deleteToken}/>
+                <TokenTable tokens={tokens}/>
             </Col>
         </Row>
     )

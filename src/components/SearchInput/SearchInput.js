@@ -2,6 +2,10 @@ import {Form, Icon, Input} from "antd";
 import React from "react";
 import './Style.css';
 
+/**
+ * Reusable component
+ * Plan to customise it and implement logic using React hooks apis.
+ */
 function SearchInput() {
 
     return (
