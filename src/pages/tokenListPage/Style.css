@@ -1,88 +1,13 @@
-.ant-layout-content {
-    background: #090925;
-}
-
-.ant-layout-sider {
-    background: #343654;
-    color: white;
-}
-
-.ant-menu {
-    background: #343654;
-    color: white;
-}
-
-.logo {
-    margin: 16px;
-    display: flex;
-    justify-content: center;
-}
-
-.contentTitle {
-    margin: 36px;
-    color: white;
-}
-
-.searchBox {
-    margin: 36px;
-    width: 800px;
-}
-
-.ant-input {
+.action-buttons {
     background:  #343654;
     border: none;
     color: white;
 }
-
-.searchActions-div {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.issueToken-button {
-    background: #56E8CD;
-    margin-right: 16px;
-    border: none;
-    color: white;
-}
-.issueToken-button:hover {
-    background: #56E8CD;
-    color: white;
-}
-.issueToken-button:focus {
-    background: #56E8CD;
-    color: white;
-}
-
-.exportToCsv-button {
-    background:  #343654;
-    margin-right: 16px;
-    border: none;
-    color: white;
-}
-.exportToCsv-button:hover {
+.action-buttons:hover {
     background:  #343654;
     color: white;
 }
-.exportToCsv-button:focus {
+.action-buttons:focus {
     background:  #343654;
     color: white;
-}
-
-.ant-table-wrapper {
-    margin: 36px;
-}
-
-.ant-table  {
-    color: white;
-
-}
-.ant-table-header-column {
-    color: white;
-
-}
-.rows {
-    background: #090925;
-    border: none;
 }

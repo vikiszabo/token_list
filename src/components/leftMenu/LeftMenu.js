@@ -1,27 +1,40 @@
 import LOGO from "../../logo.svg";
-import {Menu, Icon, Item} from "antd";
-import React from "react";
+import {Icon, Menu} from "antd";
+import React, {memo} from "react";
 import "./Style.css";
+import {Link} from "react-router-dom";
+import {uniqueID} from "../../utils/helperFunctions";
+import PropTypes from 'prop-types';
 
-function LeftMenu() {
-
+/**
+ * This component helps the user to navigate easily through the application.
+ * @param menuRouting
+ */
+function LeftMenu({menuRouting}) {
     return (
         <>
             <div className='logo'>
                 <img alt={''} src={LOGO} width={50} height={50}/>
             </div>
-            <Menu  mode={'inline'} defaultSelectedKeys={['2']}>
-                <Menu.Item  key="1">
-                    <Icon type="plus" />
-                    <span>Issue Token</span>
-                </Menu.Item>
-                <Menu.Item key="2">
-                    <Icon type="unordered-list" />
-                    <span>Token List</span>
-                </Menu.Item>
+            <Menu mode={'inline'} defaultSelectedKeys={['2']}>
+                {
+                    menuRouting.map((route) =>
+                        <Menu.Item key={uniqueID()}>
+                            <Link to={route.path}>
+                                <Icon type={route.icon} className="menuItems"/>
+                                <span className={"menuItems"}>{route.label}</span>
+                            </Link>
+                        </Menu.Item>
+                    )
+                }
             </Menu>
         </>
     )
 }
 
-export default LeftMenu;
+LeftMenu.propTypes = {
+    menuRouting: PropTypes.array.isRequired
+};
+
+
+export default memo(LeftMenu);

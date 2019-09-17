@@ -1,49 +1,48 @@
-import React from 'react';
+import React, {memo} from 'react';
 import 'antd/dist/antd.css';
 import './Style.css';
-import {Button, Icon, Input, Layout, Table} from 'antd';
-import LeftMenu from "../../components/leftMenu/LeftMenu";
-import {columns, dataSource} from "../../data/data";
+import {Button, Col, Row} from 'antd';
+import {Link} from "react-router-dom";
+import TokenTable from "../../components/tokenTable/TokenTable";
+import SearchInput from "../../components/SearchInput/SearchInput";
+import PropTypes from "prop-types";
 
-
-function TokenListPage() {
-
-    const {Sider, Content} = Layout;
-
+/**
+ * This is the page where you can see and search tokens.
+ * @param tokens
+ */
+function TokenListPage({tokens}) {
 
     return (
-        <Layout style={{height: 1200, width: 1600}}>
-            <Sider type={'flex'} justify={'center'} width={'25%'} >
-                <LeftMenu/>
-            </Sider>
-            <Content width={'75%'} >
 
+        <Row>
+            <Col>
                 <h1 className='contentTitle'>Token List</h1>
-                <div className={"searchActions-div"}>
-                <Input
-                    className="searchBox"
-                    placeholder="Contract name or address or ticker"
-                    prefix={<Icon type="search" style={{ color: 'white' }} />}
-                />
-                <div>
-                    <Button className="issueToken-button" size={"default"}>
-                        Issue Token
-                    </Button>
-                    <Button className="exportToCsv-button"  icon="download" >
-                        Export to CSV
-                    </Button>
-                </div>
-                </div>
-                <Table rowClassName="rows"
-                       bordered={false}
-                       columns={columns}
-                       dataSource={dataSource}
-                       size="medium"/>
+                <Row type="flex" justify="center">
+                    <Col span={16}>
+                        <SearchInput/>
+                    </Col>
+                    <Col span={8}>
+                        <Button className="issueToken-button">
+                            <Link to="/tokens/issue-token">
+                                Issue Token
+                            </Link>
+                        </Button>
 
-            </Content>
-        </Layout>
+                        <Button className="action-buttons" icon="download">
+                            Export to CSV
+                        </Button>
+                    </Col>
+                </Row>
+                <TokenTable tokens={tokens}/>
+            </Col>
+        </Row>
     )
-
 }
 
-export default TokenListPage;
+TokenListPage.propTypes = {
+    tokens: PropTypes.array.isRequired
+};
+
+
+export default memo(TokenListPage);
