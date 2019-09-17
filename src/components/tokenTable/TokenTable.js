@@ -6,9 +6,8 @@ import './Style.css';
  * Table component to display the token list.
  * @param tokens
  */
-function TokenTable({tokens})
-{
-    const { Column } = Table;
+function TokenTable({tokens}) {
+    const {Column} = Table;
 
     const columns = [
         {

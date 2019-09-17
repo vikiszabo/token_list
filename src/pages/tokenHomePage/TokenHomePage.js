@@ -9,24 +9,24 @@ import IssueTokenPage from "../issueTokenPage/IssueTokenPage";
 import {dataSource} from "../../data/data";
 import {useStateWithLocalStorage} from "../../utils/customHooks";
 
-
 /**
  * The main page of the app
  */
-
 function TokenHomePage() {
+
+    // Passed to LeftMenu - plans to synchronise LeftMenu and buttons routing
     const menuRouting = [
         {
             path: '/tokens/issue-token',
             label: "Issue Token",
             icon: "plus",
-            key:  '1'
+            key: '1'
         },
         {
             path: '/tokens',
             label: "Token List",
             icon: "unordered-list",
-            key:  '2'
+            key: '2'
         }
     ];
 
@@ -40,10 +40,9 @@ function TokenHomePage() {
     const [tokens, setTokens] = useStateWithLocalStorage('tokens');
 
     const deleteToken = (key) => {
-        const newTokens = localStorage.getItem(tokens).filter(token => token.key !== key );
+        const newTokens = localStorage.getItem(tokens).filter(token => token.key !== key);
         setTokens(newTokens);
     };
-
 
 
     return (
@@ -54,16 +53,15 @@ function TokenHomePage() {
             <Col span={18} className="page-col">
                 <Switch>
                     <Route exact path="/" render={() =>
-                        <TokenListPage  tokens={tokens} deleteToken={deleteToken} />}/>
+                        <TokenListPage tokens={tokens} deleteToken={deleteToken}/>}/>
                     <Route exact path="/tokens" render={() =>
-                        <TokenListPage tokens={tokens} deleteToken={deleteToken}  />}/>
-                    <Route  path="/tokens/issue-token" render={() => <IssueTokenPage />} />
+                        <TokenListPage tokens={tokens} deleteToken={deleteToken}/>}/>
+                    <Route path="/tokens/issue-token" render={() => <IssueTokenPage/>}/>
                 </Switch>
 
             </Col>
         </Row>
     )
-
 }
 
 export default memo(TokenHomePage);

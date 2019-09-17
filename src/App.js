@@ -10,9 +10,9 @@ function App() {
         <ErrorBoundary>
             <Router>
                 <TokenHomePage>
-                    <Route exact path="/" component={TokenListPage} />
-                    <Route exact path="/tokens" component={TokenListPage} />
-                    <Route path="/tokens/issue-token" component={IssueTokenPage} />
+                    <Route exact path="/" component={TokenListPage}/>
+                    <Route exact path="/tokens" component={TokenListPage}/>
+                    <Route path="/tokens/issue-token" component={IssueTokenPage}/>
                 </TokenHomePage>
             </Router>
         </ErrorBoundary>

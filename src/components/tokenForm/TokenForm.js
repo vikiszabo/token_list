@@ -10,18 +10,17 @@ import moment from "moment";
  * @param form
  */
 
-function TokenForm({form})
-{
-    const { Option } = Select;
+function TokenForm({form}) {
+    const {Option} = Select;
 
     const formItemLayout = {
         labelCol: {
-            xs: { span: 24 },
-            sm: { span: 5 },
+            xs: {span: 24},
+            sm: {span: 5},
         },
         wrapperCol: {
-            xs: { span: 24 },
-            sm: { span: 12 },
+            xs: {span: 24},
+            sm: {span: 12},
         },
     };
 
@@ -29,7 +28,7 @@ function TokenForm({form})
     const handleSubmit = event => {
         event.preventDefault();
 
-        const { validateFields } = form;
+        const {validateFields} = form;
 
         validateFields((err, values) => {
             if (!err) {
@@ -61,7 +60,7 @@ function TokenForm({form})
             {/*Refactor it with contextApi - decorator pattern: context.Provider, context.Consumer*/}
             <Form.Item label="Token name">
                 {form.getFieldDecorator('tokenName', {
-                    rules: [{ required: true, message: 'Token name is required!' }],
+                    rules: [{required: true, message: 'Token name is required!'}],
                 })(
                     <Input
                         placeholder="Token name"
@@ -70,7 +69,7 @@ function TokenForm({form})
             </Form.Item>
             <Form.Item label="Token ticker">
                 {form.getFieldDecorator('tokenTicker', {
-                    rules: [{ required: true, message: 'Token ticker is required!' }],
+                    rules: [{required: true, message: 'Token ticker is required!'}],
                 })(
                     <Input
                         placeholder="Token ticker"
@@ -79,7 +78,7 @@ function TokenForm({form})
             </Form.Item>
             <Form.Item label="Token supply">
                 {form.getFieldDecorator('totalSupply', {
-                    rules: [{ required: true, message: 'Total supply is required!' }],
+                    rules: [{required: true, message: 'Total supply is required!'}],
                 })(
                     <Input
                         placeholder="Total supply"
@@ -89,7 +88,7 @@ function TokenForm({form})
             </Form.Item>
             <Form.Item label="Issuer name">
                 {form.getFieldDecorator('issuerName', {
-                    rules: [{ required: true, message: 'Issuer name is required!' }],
+                    rules: [{required: true, message: 'Issuer name is required!'}],
                 })(
                     <Input
                         placeholder="Issuer name"
@@ -98,7 +97,7 @@ function TokenForm({form})
             </Form.Item>
             <Form.Item label="template">
                 {form.getFieldDecorator('template', {
-                    rules: [{ required: true, message: 'Template is required!' }],
+                    rules: [{required: true, message: 'Template is required!'}],
                 })(
                     <Select
                         placeholder="Template">
@@ -108,7 +107,7 @@ function TokenForm({form})
             </Form.Item>
             <Form.Item label='Country'>
                 {form.getFieldDecorator('country', {
-                    rules: [{ required: true, message: 'Please, choose a country' }],
+                    rules: [{required: true, message: 'Please, choose a country'}],
                 })(
                     <Select placeholder="Country"
                     >

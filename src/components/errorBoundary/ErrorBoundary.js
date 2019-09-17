@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 /** This component helps to track errors during rendering in lifecycle methods
  *  anywhere in the child component tree and
@@ -11,7 +11,8 @@ class ErrorBoundary extends Component {
         this.state = {
             hasError: false,
             error: null,
-            info: null };
+            info: null
+        };
     }
 
     componentDidCatch(error, info) {
@@ -29,9 +30,9 @@ class ErrorBoundary extends Component {
             return (
                 <div>
                     <h2>Something went wrong.</h2>
-                    <details style={{ whiteSpace: 'pre-wrap' }}>
+                    <details style={{whiteSpace: 'pre-wrap'}}>
                         {this.state.error && this.state.error.toString()}
-                        <br />
+                        <br/>
                         {this.state.info.componentStack}
                     </details>
                 </div>
