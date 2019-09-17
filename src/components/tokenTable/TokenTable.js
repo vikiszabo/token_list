@@ -1,6 +1,7 @@
 import {Icon, Table} from "antd";
 import React, {memo} from "react";
 import './Style.css';
+import PropTypes from "prop-types";
 
 /**
  * Table component to display the token list.
@@ -74,5 +75,9 @@ function TokenTable({tokens}) {
         </>
     )
 }
+
+TokenTable.propTypes = {
+    tokens: PropTypes.array.isRequired
+};
 
 export default memo(TokenTable);

@@ -30,12 +30,10 @@ function TokenHomePage() {
         }
     ];
 
-
     /**
      *  Handling states and tracking local storage logic needs to be implemented yet
      *  with React Hooks apis.
      */
-
     localStorage.setItem('tokens', JSON.stringify(dataSource));
     const [tokens, setTokens] = useStateWithLocalStorage('tokens');
 
@@ -43,7 +41,6 @@ function TokenHomePage() {
         const newTokens = localStorage.getItem(tokens).filter(token => token.key !== key);
         setTokens(newTokens);
     };
-
 
     return (
         <Row type="flex" justify="space-around">
@@ -58,7 +55,6 @@ function TokenHomePage() {
                         <TokenListPage tokens={tokens} deleteToken={deleteToken}/>}/>
                     <Route path="/tokens/issue-token" render={() => <IssueTokenPage/>}/>
                 </Switch>
-
             </Col>
         </Row>
     )
